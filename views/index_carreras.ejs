@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <!--Boxicons-->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Carreras</title>
+</head> 
+ <body> 
+    <h1 style="text-align: center; margin-top: 5%;">Listado de Carreras<i class='bx bxs-bookmark-alt-plus'></i></h1>
+        <div class="container">
+         <a href="/crear_carrera" class="btn btn -outline-primary mt-8"><i class='bx bxs-plus-circle bx-md'></i><h4>Crear Carrera</h4></a> <br> 
+         <table class="table table-bordered table-striped text-center mt-4"> 
+                <thead> 
+                 <tr class="big-primary">
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre de la carrera</th>
+                    <th scope="col">Universidad</th>
+                </tr>
+                </thead>
+                <tbody> 
+                 <% results.forEach((carrera)=> { %> 
+                <tr> 
+                     <td><%= carrera.id %></td> 
+                     <td><%= carrera.carrera %></td> 
+                     <td><%= carrera.universidad %></td>
+                     <td> 
+                         <a href="/editar_carrera/<%= carrera.id %>" class="btn btn-outline-info">editar</a> 
+                         <a href="/eliminar_carrera/<%= carrera.id %>" class="btn btn-outline-info">borrar</a>
+                     </td> 
+                </tr> 
+             <% }) %> 
+             </tbody>
+        </table>
+    </div>
+    <a href="/" ><button type="button" class="btn btn-outline-primary d-grid gap-2 col-6 mx-auto">Volver</button></a>
+</body>
+</html> 
